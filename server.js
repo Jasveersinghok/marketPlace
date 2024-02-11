@@ -8,7 +8,7 @@ import productRoute from "./routes/productRoute.js";
 import orderRoute from "./routes/orderRoute.js";
 import morgan from "morgan";
 import path from "path";
-import {fileURLToPath} from '/url';
+import {fileURLToPath} from 'url';
 //creating app instance
 const app = express();
 
