@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 //middleware
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "./fronend/build")));
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 // routes
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/category", categoryRoute);
