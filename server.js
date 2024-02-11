@@ -8,6 +8,7 @@ import productRoute from "./routes/productRoute.js";
 import orderRoute from "./routes/orderRoute.js";
 import morgan from "morgan";
 import path from "path";
+import {fileURLToPath} from '/url';
 //creating app instance
 const app = express();
 
@@ -15,7 +16,9 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
 const DEV_MODE = process.env.DEV_MODE;
-
+connection();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //middleware
 app.use(express.json());
 app.use(morgan("dev"));
@@ -31,7 +34,6 @@ app.use("*", function (req, res) {
 });
 
 //data base calling
-connection();
 
 app.get("/", (req, res) => {
   res.send("app is working smoothly");
